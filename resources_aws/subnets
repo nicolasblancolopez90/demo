@@ -1,0 +1,10 @@
+# create the Subnet
+resource "aws_subnet" "My_VPC_Subnet" {
+  vpc_id                  = aws_vpc.My_VPC.id
+  cidr_block              = var.subnetCIDRblock
+  map_public_ip_on_launch = var.mapPublicIP
+  availability_zone       = var.availabilityZone
+tags = {
+   Name = "My VPC Subnet"
+}
+} # end resource
